@@ -1,0 +1,73 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+#album_collection {
+  float: left;
+  width: 50%;
+  padding-right: 20px;
+  text-align: left;
+}
+
+#album_collection a,
+#photo_collection a {
+  color: white;
+  text-decoration: none;
+}
+
+.album {
+  text-transform: capitalize;
+}
+
+#photo_collection {
+  list-style: none outside none;
+  text-align: left;
+}
+
+#photo_collection li {
+  margin-bottom: 20px;  
+}
+
+#photo_collection img {
+  display: block;
+}
+
+.photo_title {
+  display: block;
+  text-transform: capitalize;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

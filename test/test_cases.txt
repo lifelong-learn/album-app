@@ -1,0 +1,4 @@
+x Can call getAlbum
+x Verify callback to getAlbum is called once
+x Verify correct URL to getAlbum is called
+x Verify callback to getAlbum returns correct data
