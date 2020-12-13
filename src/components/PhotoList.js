@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Axios from 'axios';
 const PhotoList = ({ match }) => {
   const albumId = match ? match.params.albumId : 1;
-  const [photos, setPhotos] = useState([]);
-  useEffect(() => {
+  const [photos, setPhotos] = React.useState([]);
+  React.useEffect(() => {
     Axios.get(`http://jsonplaceholder.typicode.com/album/${albumId}/photos`)
     .then(res => setPhotos(res.data));
   }, [setPhotos, albumId]);

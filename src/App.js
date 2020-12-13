@@ -1,17 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
 import AlbumList from './components/AlbumList';
-import withListLoading from './components/withListLoading';
 import Axios from 'axios';
 
 function App() {
-  const AlbumListLoading = withListLoading(AlbumList);
-  const [appState, setAppState] = useState({
+  const [appState, setAppState] = React.useState({
     loading: false,
     repos: null,
   });
 
-  useEffect(() => {
+  React.useEffect(() => {
     setAppState({ loading: true });
     Axios.all([
       Axios.get('http://jsonplaceholder.typicode.com/albums'),
@@ -23,12 +21,20 @@ function App() {
     });
   }, [setAppState]);
 
+  if (appState.loading) {
+    return (
+      <div data-test="app-loading">
+        Loading...
+      </div>
+    );
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <h1>My Repositories</h1>
+        <h1>My Album Repositories</h1>
         <div className="repo-container" data-test="app-container">
-          <AlbumListLoading isLoading={ appState.loading } repos={ appState.repos } />
+          <AlbumList repos={ appState.repos } />
         </div>
       </header>
     </div>
